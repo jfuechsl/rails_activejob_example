@@ -7,13 +7,13 @@ class AllocJob < ApplicationJob
     count_mean = 100
     count_lambda = count_mean**-1
     count_rng = Distribution::Exponential.rng(count_lambda)
-    alloc_count = [1, count_rng.call].max
+    alloc_count = [1, count_rng.call].max.round
     alloc_mean = 1024
     alloc_lambda = alloc_mean**-1
     alloc_rng = Distribution::Exponential.rng(alloc_lambda)
     total_bytes = 0
     alloc_count.times do
-      alloc_bytes = [[50, alloc_rng.call].max, 1024**2].min
+      alloc_bytes = [[50, alloc_rng.call].max, 1024**2].min.round
       random_mem = Random.new.bytes(alloc_bytes)
       total_bytes += alloc_bytes
     end

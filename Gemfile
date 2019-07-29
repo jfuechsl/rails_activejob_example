@@ -59,3 +59,5 @@ gem 'sidekiq'
 # gem 'resque'
 
 gem 'unicorn'
+
+gem 'distribution'

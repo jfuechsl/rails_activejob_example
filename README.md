@@ -10,6 +10,7 @@ To generate 100 jobs:
 
 ```
 ECHO_JOB_COUNT=100 bundle exec rake echo:generate
+ALLOC_JOB_COUNT=100 bundle exec rake alloc:generate
 ```
 
 ### Switch the ActiveJob backend
